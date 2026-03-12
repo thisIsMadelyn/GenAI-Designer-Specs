@@ -33,7 +33,7 @@ The system uses **FastAPI** as the backend, **LangGraph** for multi-agent orches
 
 ---
 
-## 2. What Was Built
+## 2. What Should Be Build
 
 ### Backend (Python / FastAPI)
 
@@ -53,7 +53,7 @@ The system uses **FastAPI** as the backend, **LangGraph** for multi-agent orches
 | `agents/testing.py` | Hardcoded responses for testing without API key |
 | `api/chat_router.py` | FastAPI routes: `/api/chat` and `/api/chat/design` |
 
-### Frontend (React) — In Progress
+### Frontend (React)
 
 | File | Purpose |
 |------|---------|
@@ -77,7 +77,7 @@ LangGraph allows defining the agent pipeline as a **stateful graph** where each 
 - Pass state (outputs of previous agents) to subsequent agents
 - Route between "design pipeline" and "simple chat" based on user intent
 
-### Why PostgreSQL for conversation history?
+### Why MySQL for conversation history?
 The OpenAI API is **stateless** — it has no memory between calls. Every request must include the full conversation history. PostgreSQL stores this per `session_id` so users can return to previous conversations.
 
 ### Two API endpoints — why?
@@ -140,7 +140,7 @@ SystemDesignerAssistant/
 
 ---
 
-## 5. Agent Pipeline
+## 5. Agent Pipeline So Far
 
 ```
 User submits form
