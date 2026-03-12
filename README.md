@@ -26,9 +26,10 @@
 - Architecture recommendation (Microservices vs Monolith with tradeoff explanation)
 - MySQL database schema with ERD diagram (Mermaid)
 - REST API design with Spring Security JWT configuration
-- Docker Compose configuration
+- DevOps Enginner (Docker Compose configuration)
+- Testing Manager (Unit and Integration Testing) 
 
-The system uses **FastAPI** as the backend, **LangGraph** for multi-agent orchestration, **OpenAI GPT-4o** as the AI model, and **PostgreSQL** for conversation history storage.
+The system uses **FastAPI** as the backend, **LangGraph** for multi-agent orchestration, **OpenAI GPT-4o** as the AI model, and **MySQL** for conversation history storage.
 
 ---
 
@@ -43,11 +44,13 @@ The system uses **FastAPI** as the backend, **LangGraph** for multi-agent orches
 | `db/database.py` | SQLAlchemy async engine, ORM table, DB connection |
 | `db/queries.py` | save_message, load_history, get_all_sessions |
 | `agents/orchestrator.py` | LangGraph graph — routes and coordinates all agents |
-| `agents/requirements_agent.py` | Agent 1: extracts requirements from user input |
-| `agents/architecture_agent.py` | Agent 2: designs system architecture |
-| `agents/database_agent.py` | Agent 3: designs MySQL schema and ERD |
-| `agents/api_agent.py` | Agent 4: designs REST endpoints, JWT config, Docker |
-| `agents/mock_responses.py` | Hardcoded responses for testing without API key |
+| `agents/architect.py` | Agent 1: extracts requirements from user input |
+| `agents/backend_layer.py` | Agent 2: designs system architecture |
+| `agents/database.py` | Agent 3: designs MySQL schema and ERD |
+| `agents/devops.py` | Agent 4: designs REST endpoints, JWT config, Docker |
+| `agents/llm_factory.py` | Hardcoded responses for testing without API key |
+| `agents/system_analyst.py` | Hardcoded responses for testing without API key |
+| `agents/testing.py` | Hardcoded responses for testing without API key |
 | `api/chat_router.py` | FastAPI routes: `/api/chat` and `/api/chat/design` |
 
 ### Frontend (React) — In Progress
